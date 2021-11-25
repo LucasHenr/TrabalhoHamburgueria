@@ -26,14 +26,13 @@ class PagamentoActivity : AppCompatActivity() {
 
         var btn = findViewById<Button>(R.id.finalizarpedido)
         btn.setOnClickListener {
-            val intent = Intent(this, PedidoFinalizado::class.java)
-            startActivity(intent)
+            var pedidofinal = Intent(this, PedidoFinalizado::class.java)
+            startActivity(pedidofinal)
         }
 
         var btncancelar = findViewById<Button>(R.id.cancelarpedido)
         btncancelar.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 

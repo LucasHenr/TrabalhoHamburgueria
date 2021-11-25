@@ -12,11 +12,11 @@ class PedidoFinalizado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pedido_finalizado)
 
-        var btnvoltar = findViewById<Button>(R.id.finalizarpedido)
-        btnvoltar.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        var voltar = findViewById<Button>(R.id.voltar)
+        voltar.setOnClickListener {
+            finish()
         }
-    }
-
+        }
 }
+
+

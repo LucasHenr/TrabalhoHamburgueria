@@ -33,7 +33,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="460dp"
         android:background="@color/button"
-        android:text="Voltar"/>
+        android:text="Voltar" />
 
 
 
