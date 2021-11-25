@@ -116,7 +116,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:buttonTint="@color/button" />
+                android:buttonTint="@color/button"
+                android:onClick="onRadioButtonClicked"/>
 
             <ImageView
                 android:layout_width="80dp"
@@ -148,7 +149,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:buttonTint="@color/button" />
+                android:buttonTint="@color/button"
+                android:onClick="onRadioButtonClicked"/>
 
             <ImageView
                 android:layout_width="80dp"

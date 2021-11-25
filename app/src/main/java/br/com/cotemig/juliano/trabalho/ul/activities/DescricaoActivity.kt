@@ -27,9 +27,20 @@ class DescricaoActivity : AppCompatActivity() {
 
         getItem(nome, valor, descicao, picture)
 
+        var btncomprar = findViewById<Button>(R.id.btncomprar)
+        btncomprar.setOnClickListener {
+            val intent = Intent(this, PagamentoActivity::class.java)
+            intent.putExtra("nome", nome)
+            intent.putExtra("valor", valor)
+            intent.putExtra("picture", picture)
+            startActivity(intent)
+
+        }
+
     }
 
     fun getItem(nome: String?, valor: String?, descicao: String?, picture: String?, ) {
+
 
         var namehamburguer = findViewById<TextView>(R.id.namehamburguer)
         namehamburguer.text = nome
@@ -45,18 +56,9 @@ class DescricaoActivity : AppCompatActivity() {
 
     }
 
-    fun showDetalhes(list: List<Hamburguer>) {
-
-        var item = findViewById<RecyclerView>(R.id.item)
-        item.adapter = CardapioAdapter(this, list) { hamburguer ->
-            var intent = Intent(this, DescricaoActivity::class.java)
-            intent.putExtra("nome", hamburguer.nome)
-            intent.putExtra("valor", hamburguer.valor)
-            intent.putExtra("descicao", hamburguer.descicao)
-            intent.putExtra("picture", hamburguer.picture)
-            startActivity(intent)
-        }
-
-
-    }
 }
+
+
+
+
+

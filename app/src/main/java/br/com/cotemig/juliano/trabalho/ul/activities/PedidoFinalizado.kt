@@ -14,14 +14,9 @@ class PedidoFinalizado : AppCompatActivity() {
 
         var btnvoltar = findViewById<Button>(R.id.finalizarpedido)
         btnvoltar.setOnClickListener {
-            voltar()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    private fun voltar() {
-        val intent = Intent(this, DisplayMetrics::class.java).apply {
-            putExtra(action, R.layout.activity_main)
-
-        }
-    }
 }

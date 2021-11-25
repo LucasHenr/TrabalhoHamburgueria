@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.RadioButton
 import android.widget.TextView
 import br.com.cotemig.juliano.trabalho.R
 import coil.load
@@ -24,26 +26,17 @@ class PagamentoActivity : AppCompatActivity() {
 
         var btn = findViewById<Button>(R.id.finalizarpedido)
         btn.setOnClickListener {
-            finalizado()
+            val intent = Intent(this, PedidoFinalizado::class.java)
+            startActivity(intent)
         }
 
         var btncancelar = findViewById<Button>(R.id.cancelarpedido)
         btncancelar.setOnClickListener {
-            cancelado()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    private fun finalizado(){
-        val intent = Intent(this, DisplayMetrics::class.java).apply {
-            putExtra(action, R.layout.activity_pedido_finalizado)
-        }
-    }
-
-    private fun cancelado() {
-        val intent = Intent(this, DisplayMetrics::class.java).apply {
-            putExtra(action, R.layout.activity_main)
-        }
-    }
 
     fun getDetalhes(nome: String?, valor: String?, picture: String?, ) {
 
@@ -57,4 +50,19 @@ class PagamentoActivity : AppCompatActivity() {
         imagemdetalhe.load(picture)
 
     }
+
+    fun onRadioButtonClicked(view: View) {
+        if (view is RadioButton) {
+
+            val checked = view.isChecked
+            when (view.getId()) {
+                R.id.dinheirocheck ->
+                    if (checked) {
+                    }
+                        R.id.cartaocheck ->
+                        if (checked) {
+                        }
+                    }
+            }
+        }
 }
